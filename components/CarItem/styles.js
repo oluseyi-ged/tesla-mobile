@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   carContainer: {
     width: "100%",
     height: "100%",
+    justifyContent: "space-between",
   },
 
   image: {
@@ -25,6 +26,14 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: "#5c5e62",
+  },
+
+  subtitleCTA: {
+    textDecorationLine: "underline",
+  },
+
+  buttonContainer: {
+    marginBottom: 50,
   },
 })
 

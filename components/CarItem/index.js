@@ -3,32 +3,33 @@ import { View, Text, ImageBackground } from "react-native"
 import styles from "./styles"
 import StyledButton from "../StyledButton"
 
-const CarItem = () => {
+const CarItem = ({ name, tagLine, image, tagLineCTA }) => {
   return (
     <View style={styles.carContainer}>
-      <ImageBackground
-        source={require("../../assets/images/ModelS.jpeg")}
-        style={styles.image}
-      />
+      <ImageBackground source={image} style={styles.image} />
       <View style={styles.titles}>
-        <Text style={styles.title}>Model S</Text>
-        <Text style={styles.subtitle}>Starting at $69,000</Text>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.subtitle}>
+          {tagLine} <Text style={styles.subtitleCTA}>{tagLineCTA}</Text>
+        </Text>
       </View>
 
-      <StyledButton
-        type="primary"
-        text="custom order"
-        onPress={() => {
-          console.warn("custom order was pressed")
-        }}
-      />
-      <StyledButton
-        type="secondary"
-        text="Existing inventory"
-        onPress={() => {
-          console.warn("existing inventory was pressed")
-        }}
-      />
+      <View style={styles.buttonContainer}>
+        <StyledButton
+          type="primary"
+          text="custom order"
+          onPress={() => {
+            console.warn("custom order was pressed")
+          }}
+        />
+        <StyledButton
+          type="secondary"
+          text="Existing inventory"
+          onPress={() => {
+            console.warn("existing inventory was pressed")
+          }}
+        />
+      </View>
     </View>
   )
 }
